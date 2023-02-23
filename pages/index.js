@@ -42,24 +42,24 @@ export default function Home() {
   return (
     <div>
       <div className="flex flex-col justify-center items-center ">
-        <header className="items-center flex flex-col py-14 text-white">
+        <header className="items-center flex flex-col py-14 text-[#f3f4f8]">
           <div>
             <h1 className="text-7xl font-bold">EmailAI</h1>
           </div>
           <div>
-            <p className="text-xl pt-7 font-semibold">
+            <p className="text-base pt-7 font-semibold">
               Write better emails faster with EmailAi
             </p>
           </div>
         </header>
-        <div className="w-[600px] max-sm:w-[300px] max-lg:w-[450px] pt-5">
+        <div className="w-[650px] max-sm:w-[300px] max-lg:w-[450px] pt-5">
           <textarea
             type="text"
             id="prompt"
             name="prompt"
             onChange={handleChange}
             placeholder="Start Typing here"
-            className=" w-full h-[150px] bg-gray-800 text-white p-4 block border border-gray-700 rounded-2xl placeholder-gray-400 focus:outline-none focus:ring-gray-500 focus:border-gray-500 sm:text-base"
+            className=" w-full h-[180px] bg-gray-800 text-[#f3f4f8] p-4 block border border-gray-700 rounded-2xl placeholder-gray-400 focus:outline-none focus:ring-gray-500 focus:border-gray-500 sm:text-base"
             style={{ resize: "none" }}
           />{" "}
           {isLoading ? (
@@ -68,22 +68,27 @@ export default function Home() {
             <button
               type="submit"
               onClick={handleSubmit}
-              className="flex justify-center items-center text-white font-bold py-2 px-4 rounded-3xl focus:outline-none focus:shadow-outline bg-gray-800 hover:bg-gray-700 ml-auto mt-3"
+              className="flex justify-center items-center text-[#f3f4f8] font-bold py-2 px-4 rounded-3xl focus:outline-none focus:shadow-outline bg-gray-800 hover:bg-gray-700 ml-auto mt-3"
             >
               Generate Text
             </button>
           )}
           {generatedText && (
-            <div className="my-3 text-white whitespace-pre-line ">
+            <div className="mt-5 text-[#f3f4f8] whitespace-pre-line ">
               <p className="text-lg font-bold">Generated Text:</p>
-              <p className="font-light mt-3 gap-">{generatedText}</p>
+              <textarea
+                className=" w-full h-[180px] bg-gray-800 text-[#f3f4f8] p-4 block border border-gray-700 rounded-2xl placeholder-gray-400 focus:outline-none focus:ring-gray-500 focus:border-gray-500 sm:text-base "
+                style={{ resize: "none" }}
+              >
+                {generatedText}
+              </textarea>
             </div>
           )}
         </div>
 
         <a
           href="https://tsredimaster.gatsbyjs.io/"
-          className="fixed bottom-10 left-10 px-3 py-2 rounded-3xl transition transform hover:scale-105 text-white flex items-center justify-center "
+          className="fixed bottom-10 left-10 px-3 py-2 rounded-3xl transition transform hover:scale-105 text-[#f3f4f8] flex items-center justify-center "
         >
           <img src="whitelogo.png" className="w-32 h-20 mb-2" />
         </a>
