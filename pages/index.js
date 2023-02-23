@@ -11,6 +11,20 @@ export default function Home() {
     setUserInput(event.target.value);
   }
 
+  function handleSubmit(event) {
+    event.preventDefault();
+    const prompt = userInput;
+    setIsLoading(true);
+    setGeneratedText("");
+    if (!prompt) {
+      alert("Please enter an email");
+      setIsLoading(false);
+      return;
+    } else {
+      generateText(prompt);
+    }
+  }
+
   async function generateText(prompt) {
     const response = await fetch("/api/text-generate", {
       method: "POST",
@@ -22,19 +36,6 @@ export default function Home() {
     const data = await response.json();
     setGeneratedText(data.text);
     setIsLoading(false);
-  }
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    const prompt = userInput;
-    setIsLoading(true);
-    if (!prompt) {
-      alert("Please enter an email");
-      setIsLoading(false);
-      return;
-    } else {
-      generateText(prompt);
-    }
   }
 
   console.log(userInput);
@@ -96,7 +97,7 @@ export default function Home() {
           ) : (
             <a
               href="https://tsredimaster.gatsbyjs.io/"
-              className="fixed max-sm:absolute bottom-5 left-10 px-3 py-2 rounded-3xl transition transform hover:scale-105 text-[#f3f4f8] flex items-center justify-center "
+              className="fixed max-sm:absolute bottom-5 left-10 px-3 py-2 rounded-3xl transition transform hover:scale-105 text-[#f3f4f8]  "
             >
               <img src="whitelogo.png" className="w-32 h-20 mb-2" />
             </a>
