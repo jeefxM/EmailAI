@@ -44,10 +44,10 @@ export default function Home() {
       <div className="flex flex-col justify-center items-center ">
         <header className="items-center flex flex-col py-14 text-[#f3f4f8]">
           <div>
-            <h1 className="text-7xl font-bold">EmailAI</h1>
+            <h1 className="text-7xl max-sm:text-5xl font-bold">EmailAI</h1>
           </div>
           <div>
-            <p className="text-base pt-7 font-semibold">
+            <p className="text-xl m max-sm:text-base pt-7 font-semibold">
               Write better emails faster with EmailAi
             </p>
           </div>
@@ -68,30 +68,36 @@ export default function Home() {
             <button
               type="submit"
               onClick={handleSubmit}
-              className="flex justify-center items-center text-[#f3f4f8] font-bold py-2 px-4 rounded-3xl focus:outline-none focus:shadow-outline bg-gray-800 hover:bg-gray-700 ml-auto mt-3"
+              className="flex justify-center items-center text-[#f3f4f8] font-bold py-2 px-4 rounded-3xl focus:outline-none focus:shadow-outline bg-gray-800 hover:bg-gray-700 ml-auto mt-3 max-sm:text-sm"
             >
               Generate Text
             </button>
           )}
-          {generatedText && (
+          {generatedText ? (
             <div className="mt-5 text-[#f3f4f8] whitespace-pre-line ">
               <p className="text-lg font-bold">Generated Text:</p>
               <textarea
-                className=" w-full h-[180px] bg-gray-800 text-[#f3f4f8] p-4 block border border-gray-700 rounded-2xl placeholder-gray-400 focus:outline-none focus:ring-gray-500 focus:border-gray-500 sm:text-base "
+                className="w-full h-auto min-h-[400px] max-h-[400px] overflow-y-scroll bg-gray-800 text-[#f3f4f8] p-4 block border border-gray-700 rounded-2xl placeholder-gray-400 focus:outline-none focus:ring-gray-500 focus:border-gray-500 sm:text-base mb-20"
                 style={{ resize: "none" }}
               >
                 {generatedText}
               </textarea>
+              <a
+                href="https://tsredimaster.gatsbyjs.io/"
+                className="lg:fixed bottom-5 left-10 px-3 py-2 rounded-3xl transition transform hover:scale-105 text-[#f3f4f8] flex items-center justify-center"
+              >
+                <img src="whitelogo.png" className="w-32 h-20 mb-2" />
+              </a>
             </div>
+          ) : (
+            <a
+              href="https://tsredimaster.gatsbyjs.io/"
+              className="fixed max-sm:absolute bottom-5 left-10 px-3 py-2 rounded-3xl transition transform hover:scale-105 text-[#f3f4f8] flex items-center justify-center "
+            >
+              <img src="whitelogo.png" className="w-32 h-20 mb-2" />
+            </a>
           )}
         </div>
-
-        <a
-          href="https://tsredimaster.gatsbyjs.io/"
-          className="fixed bottom-10 left-10 px-3 py-2 rounded-3xl transition transform hover:scale-105 text-[#f3f4f8] flex items-center justify-center "
-        >
-          <img src="whitelogo.png" className="w-32 h-20 mb-2" />
-        </a>
       </div>
     </div>
   );
