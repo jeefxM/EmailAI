@@ -77,8 +77,12 @@ export default function Home() {
             <div className="mt-5 text-[#f3f4f8] whitespace-pre-line ">
               <p className="text-lg font-bold">Generated Text:</p>
               <textarea
-                className="w-full h-auto min-h-[400px] max-h-[400px] overflow-y-scroll bg-gray-800 text-[#f3f4f8] p-4 block border border-gray-700 rounded-2xl placeholder-gray-400 focus:outline-none focus:ring-gray-500 focus:border-gray-500 sm:text-base mb-20"
-                style={{ resize: "none" }}
+                className="w-full h-auto min-h-[400px] max-h-[400px] bg-gray-800 text-[#f3f4f8] p-4 block border border-gray-700 rounded-2xl placeholder-gray-400 focus:outline-none focus:ring-gray-500 focus:border-gray-500 sm:text-base mb-20"
+                style={{ resize: "none", height: "auto" }}
+                onInput={(e) => {
+                  e.target.style.height = "auto";
+                  e.target.style.height = `${e.target.scrollHeight}px`;
+                }}
               >
                 {generatedText}
               </textarea>
