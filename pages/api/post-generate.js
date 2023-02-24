@@ -10,12 +10,12 @@ export default async function handler(req, res) {
   if (!prompt) return res.status(400).json({ text: "No prompt provided" });
 
   const basePromptPrefix =
-    "I am writing an email to {} complete this email and rewrite ";
+    "Help me write a professional structured linkedin post about: ";
 
   const responseResult = await openai.createCompletion({
     model: "text-davinci-003",
     prompt: `${basePromptPrefix} ${prompt}`,
-    max_tokens: 1000,
+    max_tokens: 2048,
     temperature: 0.5,
     top_p: 1,
     frequency_penalty: 0.5,

@@ -1,108 +1,60 @@
-import { useState } from "react";
-import loading from "public/Load.json";
+import Link from "next/link";
+import LinkedinEmail from "./LinkedinEmail";
+import LinkedinAi from "./LinkedinPost";
+import Navigation from "./components/navigation";
+import LandingPage from "./landingPage";
 import Lottie from "lottie-react";
+import WebAnalysis from "public/ContentCreation.json";
 
 export default function Home() {
-  const [generatedText, setGeneratedText] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-  const [userInput, setUserInput] = useState("");
-
-  function handleChange(event) {
-    setUserInput(event.target.value);
-  }
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    const prompt = userInput;
-    setIsLoading(true);
-    setGeneratedText("");
-    if (!prompt) {
-      alert("Please enter an email");
-      setIsLoading(false);
-      return;
-    } else {
-      generateText(prompt);
-    }
-  }
-
-  async function generateText(prompt) {
-    const response = await fetch("/api/text-generate", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ prompt }),
-    });
-    const data = await response.json();
-    setGeneratedText(data.text);
-    setIsLoading(false);
-  }
-
-  console.log(userInput);
-
   return (
     <div>
-      <div className="flex flex-col justify-center items-center ">
-        <header className="items-center flex flex-col py-14 text-[#f3f4f8]">
-          <div>
-            <h1 className="text-7xl max-sm:text-5xl font-bold">EmailAI</h1>
-          </div>
-          <div>
-            <p className="text-xl m max-sm:text-base pt-7 font-semibold">
-              Write better emails faster with EmailAi
+      <Navigation />
+      <div className="bg-[#0f172a] flex flex-col pt-20 items-center">
+        <h1 className="text-4xl font-bold text-[#f3f4f8] mb-8 max-sm:text-2xl font-Manrope">
+          Welcome to ProWrite AI!
+        </h1>
+        <p className="text-xl text-[#f3f4f8] mb-8 sm:min-w-[200px] max-w-lg text-center max-sm:text-base ">
+          Our web app offers three main features to help you with your online
+          presence: post generation, email generation, and job review. With our
+          AI-powered tools, you can generate high-quality content in no time.
+        </p>
+        <div className="grid grid-cols-3 gap-7 px-4 sm:px-10 max-lg:flex max-lg:flex-col">
+          <div className="bg-[#d2d4da] h-auto sm:min-w-[100px] max-w-lg min-h-[200px] hover:scale-105 rounded-lg p-4">
+            <h2 className="text-lg font-semibold mb-2">Post Generation</h2>
+            <p className="text-gray-700">
+              With our AI-powered tool, you can generate professional LinkedIn
+              ready posts in no time. Simply provide a prompt, and our tool will
+              generate a post for you.
             </p>
           </div>
-        </header>
-        <div className="w-[650px] max-sm:w-[300px] max-lg:w-[450px] pt-5">
-          <textarea
-            type="text"
-            id="prompt"
-            name="prompt"
-            onChange={handleChange}
-            placeholder="Start Typing here"
-            className=" w-full h-[180px] bg-gray-800 text-[#f3f4f8] p-4 block border border-gray-700 rounded-2xl placeholder-gray-400 focus:outline-none focus:ring-gray-500 focus:border-gray-500 sm:text-base"
-            style={{ resize: "none" }}
-          />{" "}
-          {isLoading ? (
-            <Lottie animationData={loading} className="w-16 mt-9 ml-auto" />
-          ) : (
-            <button
-              type="submit"
-              onClick={handleSubmit}
-              className="flex justify-center items-center text-[#f3f4f8] font-bold py-2 px-4 rounded-3xl focus:outline-none focus:shadow-outline bg-gray-800 hover:bg-gray-700 ml-auto mt-3 max-sm:text-sm"
-            >
-              Generate Text
-            </button>
-          )}
-          {generatedText ? (
-            <div className="mt-5 text-[#f3f4f8] whitespace-pre-line ">
-              <p className="text-lg font-bold">Generated Text:</p>
-              <textarea
-                className="w-full h-auto min-h-[400px] max-h-[400px] bg-gray-800 text-[#f3f4f8] p-4 block border border-gray-700 rounded-2xl placeholder-gray-400 focus:outline-none focus:ring-gray-500 focus:border-gray-500 sm:text-base mb-20"
-                style={{ resize: "none", height: "auto" }}
-                onInput={(e) => {
-                  e.target.style.height = "auto";
-                  e.target.style.height = `${e.target.scrollHeight}px`;
-                }}
-              >
-                {generatedText}
-              </textarea>
-              <a
-                href="https://tsredimaster.gatsbyjs.io/"
-                className="lg:fixed bottom-5 left-10 px-3 py-2 rounded-3xl transition transform hover:scale-105 text-[#f3f4f8] flex items-center justify-center"
-              >
-                <img src="whitelogo.png" className="w-32 h-20 mb-2" />
-              </a>
-            </div>
-          ) : (
-            <a
-              href="https://tsredimaster.gatsbyjs.io/"
-              className="fixed max-sm:absolute bottom-5 left-10 px-3 py-2 rounded-3xl transition transform hover:scale-105 text-[#f3f4f8]  "
-            >
-              <img src="whitelogo.png" className="w-32 h-20 mb-2" />
-            </a>
-          )}
+          <div className="bg-[#d2d4da] h-auto sm:min-w-[200px] max-w-lg hover:scale-105 rounded-lg p-4">
+            <h2 className="text-lg font-semibold mb-2">Email Generation</h2>
+            <p className="text-gray-700">
+              Our AI-powered email generator helps you create targeted emails
+              that are ready to send. Simply provide a prompt, and our tool will
+              generate an email for you.
+            </p>
+          </div>
+          <div className="bg-[#d2d4da] h-auto sm:min-w-[200px] max-w-lg hover:scale-105 rounded-lg p-4">
+            <h2 className="text-lg font-semibold mb-2">Job Review</h2>
+            <p className="text-gray-700">
+              Our job review tool helps you understand what a job is about by
+              providing a brief summary of the job description. Simply input the
+              job details, and our tool will generate a summary for you.
+            </p>
+          </div>
         </div>
+        <Lottie
+          animationData={WebAnalysis}
+          className="min-w-[200px] max-w-lg min-h-[200px] max-lg:mx-auto"
+        />
+        <a
+          href="https://tsredimaster.gatsbyjs.io/"
+          className="fixed bottom-5 left-10 max max-lg:static px-3 py-2 rounded-3xl transition transform hover:scale-105 text-[#f3f4f8]  "
+        >
+          <img src="whitelogo.png" className="w-32 h-20 mb-2" />
+        </a>
       </div>
     </div>
   );
