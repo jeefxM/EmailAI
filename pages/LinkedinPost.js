@@ -65,7 +65,7 @@ const LinkedinPost = () => {
           placeholder="Explain what the post is about."
           className=" w-full min-h-[200px] bg-gray-800 text-[#f3f4f8] p-4 block border border-gray-700 rounded-2xl placeholder-gray-400 focus:outline-none focus:ring-gray-500 focus:border-gray-500 sm:text-base"
           style={{ resize: "none" }}
-        />{" "}
+        />
         {isLoading ? (
           <Lottie animationData={loading} className="w-16 mt-9 ml-auto" />
         ) : (
@@ -91,7 +91,11 @@ const LinkedinPost = () => {
               href="https://tsredimaster.gatsbyjs.io/"
               className="lg:fixed bottom-5 left-10 px-3 py-2 rounded-3xl transition transform hover:scale-105 text-[#f3f4f8] flex items-center justify-center"
             >
-              <img src="whitelogo.png" className="w-32 h-20 mb-2" />
+              <img
+                src="whitelogo.png"
+                alt="Tsredi"
+                className="w-32 h-20 mb-2"
+              />
             </a>
           </div>
         ) : (
