@@ -47,10 +47,10 @@ const LinkedinPost = () => {
       <Navigation />
       <header className="items-center flex flex-col py-14 text-[#f3f4f8]">
         <div>
-          <h1 className="text-4xl max-sm:text-5xl font-bold">ProWrite AI</h1>
+          <h1 className="text-4xl max-sm:text-2xl font-bold">ProWrite AI</h1>
         </div>
         <div>
-          <p className="text-xl m max-sm:text-base pt-7 font-semibold">
+          <p className="text-xl m max-sm:text-sm pt-7 font-semibold">
             Get noticed on LinkedIn with the help of ProWrite AI help.
           </p>
         </div>
