@@ -50,7 +50,7 @@ const JobReview = () => {
           <h1 className="text-4xl max-sm:text-2xl font-bold">ProWrite AI</h1>
         </div>
         <div>
-          <p className="text-xl m max-sm:text-sm pt-7 font-semibold max max-sm:ml-7">
+          <p className="text-xl m max-sm:text-sm pt-7 font-semibold max max-sm:ml-5">
             Make sense of your job description with the help of ProWrite AI
             analysis
           </p>
