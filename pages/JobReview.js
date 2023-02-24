@@ -51,7 +51,8 @@ const JobReview = () => {
         </div>
         <div>
           <p className="text-xl m max-sm:text-base pt-7 font-semibold">
-            Make sense of your job description with ProWrite AI's analysis
+            Make sense of your job description with the help of ProWrite AI
+            analysis
           </p>
         </div>
       </header>

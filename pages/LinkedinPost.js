@@ -51,7 +51,7 @@ const LinkedinPost = () => {
         </div>
         <div>
           <p className="text-xl m max-sm:text-base pt-7 font-semibold">
-            Get noticed on LinkedIn with ProWrite AI's help.
+            Get noticed on LinkedIn with the help of ProWrite AI help.
           </p>
         </div>
       </header>
