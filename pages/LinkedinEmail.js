@@ -83,13 +83,13 @@ const LinkedinEmail = () => {
         {generatedText ? (
           <div className="mt-5 text-[#f3f4f8] whitespace-pre-line ">
             <p className="text-lg font-bold">Generated Text:</p>
-            <Textararea
+            <TextareaAutosize
               className="w-full h-auto min-h-[400px] max-h-[400px] bg-gray-800 text-[#f3f4f8] p-4 block border border-gray-700 rounded-2xl placeholder-gray-400 focus:outline-none focus:ring-gray-500 focus:border-gray-500 sm:text-base mb-20"
               style={{ resize: "none", height: "auto" }}
               maxRows={200}
             >
               {generatedText}
-            </Textararea>
+            </TextareaAutosize>
             <a
               href="https://tsredimaster.gatsbyjs.io/"
               className="lg:fixed bottom-5 left-10 px-3 py-2 rounded-3xl transition transform hover:scale-105 text-[#f3f4f8] flex items-center justify-center"
