@@ -16,30 +16,39 @@ function LandingPage() {
           AI-powered tools, you can generate high-quality content in no time.
         </p>
         <div className="grid grid-cols-3 gap-7 px-4 sm:px-10 max-lg:flex max-lg:flex-col">
-          <div className="bg-[#d2d4da] h-auto sm:min-w-[100px] max-w-lg min-h-[200px] hover:scale-105 rounded-lg p-4">
+          <Link
+            href="/LinkedinPost"
+            className="bg-[#d2d4da] h-auto sm:min-w-[100px] max-w-lg min-h-[200px] hover:scale-105 rounded-lg p-4"
+          >
             <h2 className="text-lg font-semibold mb-2">Post Generation</h2>
-            <Link href="/LinkedinPost" className="text-gray-700">
+            <p className="text-gray-700">
               With our AI-powered tool, you can generate professional LinkedIn
               ready posts in no time. Simply provide a prompt, and our tool will
               generate a post for you.
-            </Link>
-          </div>
-          <div className="bg-[#d2d4da] h-auto sm:min-w-[200px] max-w-lg hover:scale-105 rounded-lg p-4">
+            </p>
+          </Link>
+          <Link
+            href="/LinkedinEmail"
+            className="bg-[#d2d4da] h-auto sm:min-w-[200px] max-w-lg hover:scale-105 rounded-lg p-4"
+          >
             <h2 className="text-lg font-semibold mb-2">Email Generation</h2>
-            <Link href="/LinkedinEmail" className="text-gray-700">
+            <p className="text-gray-700">
               Our AI-powered email generator helps you create targeted emails
               that are ready to send. Simply provide a prompt, and our tool will
               generate an email for you.
-            </Link>
-          </div>
-          <div className="bg-[#d2d4da] h-auto sm:min-w-[200px] max-w-lg hover:scale-105 rounded-lg p-4">
+            </p>
+          </Link>
+          <Link
+            href="/JobReview"
+            className="bg-[#d2d4da] h-auto sm:min-w-[200px] max-w-lg hover:scale-105 rounded-lg p-4"
+          >
             <h2 className="text-lg font-semibold mb-2">Job Review</h2>
-            <Link href="/JobReview" className="text-gray-700">
+            <p className="text-gray-700">
               Our job review tool helps you understand what a job is about by
               providing a brief summary of the job description. Simply input the
               job details, and our tool will generate a summary for you.
-            </Link>
-          </div>
+            </p>
+          </Link>
         </div>
         <Lottie
           animationData={WebAnalysis}
