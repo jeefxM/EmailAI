@@ -71,9 +71,9 @@ function LandingPage() {
                   <p className="text-gray-700">
                     A prompt is a short piece of text that you provide to our
                     AI-powered tools as a starting point for generating content.
-                    For example, you might provide a prompt like "Write a
-                    LinkedIn post about my new product launch" or "Generate an
-                    email to follow up with a potential customer." Our tools
+                    For example, you might provide a prompt like “Write a
+                    LinkedIn post about my new product launch” or “Generate an
+                    email to follow up with a potential customer.” Our tools
                     will use the prompt to generate content that fits the
                     context and tone of your message.
                   </p>
