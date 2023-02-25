@@ -7,12 +7,12 @@ function LandingPage() {
   return (
     <div>
       <div className="bg-[#0f172a] flex flex-col pt-20 items-center">
-        <p className="text-4xl font-bold text-[#f3f4f8] mb-8 max-sm:text-2xl font-Manrope">
+        <h1 className="text-4xl font-bold text-[#f3f4f8] mb-8 max-sm:text-2xl font-Manrope">
           Welcome to{" "}
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 to-yellow-400">
             ProWriteAI
           </span>{" "}
-        </p>
+        </h1>
         <h1></h1>
         <p className="text-xl text-[#f3f4f8] mb-8 sm:min-w-[200px] max-w-lg text-center max-sm:text-base ">
           Our web app offers three main features to help you with your online

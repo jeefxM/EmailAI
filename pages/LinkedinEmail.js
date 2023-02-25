@@ -54,7 +54,7 @@ const LinkedinEmail = () => {
           </h1>
         </div>
         <div>
-          <p className="text-xl m max-sm:text-xs pt-7 font-semibold">
+          <p className="text-xl m max-sm:text-sm max-sm:px-10 pt-7 font-semibold">
             Stop staring at a blank screen and start writing with ProWrite AI
           </p>
         </div>
