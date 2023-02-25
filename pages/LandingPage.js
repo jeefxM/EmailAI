@@ -104,9 +104,9 @@ function LandingPage() {
                     Is my data secure with ProWrite AI?
                   </h3>
                   <p className="text-gray-700">
-                    Absolutely. We take data privacy and security very
-                    seriously, and all user data is encrypted and stored
-                    securely.
+                    Currently we are not storing any user data anywhere since
+                    there is no authentication system or database used in our
+                    frontend website.
                   </p>
                 </div>
               </div>
