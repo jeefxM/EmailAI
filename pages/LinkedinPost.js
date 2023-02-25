@@ -47,7 +47,11 @@ const LinkedinPost = () => {
       <Navigation />
       <header className="items-center flex flex-col py-14 text-[#f3f4f8]">
         <div>
-          <h1 className="text-4xl max-sm:text-2xl font-bold">ProWrite AI</h1>
+          <h1 className="text-4xl max-sm:text-2xl font-bold">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 to-yellow-400">
+              ProWriteAI
+            </span>
+          </h1>
         </div>
         <div>
           <p className="text-xl m max-sm:text-sm pt-7 font-semibold">
@@ -62,7 +66,7 @@ const LinkedinPost = () => {
           name="prompt"
           maxRows={200}
           onChange={handleChange}
-          placeholder="Explain what the post is about."
+          placeholder="Describe the topic or idea you want to write about in your post."
           className=" w-full min-h-[200px] bg-gray-800 text-[#f3f4f8] p-4 block border border-gray-700 rounded-2xl placeholder-gray-400 focus:outline-none focus:ring-gray-500 focus:border-gray-500 sm:text-base"
           style={{ resize: "none" }}
         />

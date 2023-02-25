@@ -47,7 +47,11 @@ const JobReview = () => {
       <Navigation />
       <header className="items-center flex flex-col py-14 text-[#f3f4f8]">
         <div>
-          <h1 className="text-4xl max-sm:text-2xl font-bold">ProWrite AI</h1>
+          <h1 className="text-4xl max-sm:text-2xl font-bold">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 to-yellow-400">
+              ProWriteAI
+            </span>
+          </h1>
         </div>
         <div>
           <p className="text-xl m max-sm:text-sm pt-7 font-semibold max max-sm:ml-5">
@@ -63,7 +67,7 @@ const JobReview = () => {
           name="prompt"
           maxRows={200}
           onChange={handleChange}
-          placeholder="Input your job description here"
+          placeholder="Copy and paste your job description in here to generate a brief overview of the job."
           className=" w-full min-h-[200px] bg-gray-800 text-[#f3f4f8] p-4 block border border-gray-700 rounded-2xl placeholder-gray-400 focus:outline-none focus:ring-gray-500 focus:border-gray-500 sm:text-base"
           style={{ resize: "none" }}
         />

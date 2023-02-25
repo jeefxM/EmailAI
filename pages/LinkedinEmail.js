@@ -47,7 +47,11 @@ const LinkedinEmail = () => {
       <Navigation />
       <header className="items-center flex flex-col py-14 text-[#f3f4f8]">
         <div>
-          <h1 className="text-4xl max-sm:text-2xl font-bold">ProWrite AI</h1>
+          <h1 className="text-4xl max-sm:text-2xl font-bold">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 to-yellow-400">
+              ProWriteAI
+            </span>
+          </h1>
         </div>
         <div>
           <p className="text-xl m max-sm:text-xs pt-7 font-semibold">
@@ -64,9 +68,8 @@ const LinkedinEmail = () => {
           id="prompt"
           name="prompt"
           onChange={handleChange}
-          placeholder="Explain brifely what should be included in the email "
+          placeholder="Provide a brief overview of your email's purpose and audience to generate a targeted and personalized email using our AI-powered tool. "
           className=" w-full min-h-[200px] bg-gray-800 text-[#f3f4f8] p-4 block border border-gray-700 rounded-2xl placeholder-gray-400 focus:outline-none focus:ring-gray-500 focus:border-gray-500 sm:text-base"
-          style={{ resize: "none" }}
           maxRows={200}
         />{" "}
         {isLoading ? (
