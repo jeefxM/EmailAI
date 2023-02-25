@@ -20,7 +20,7 @@ const LinkedinPost = () => {
     setIsLoading(true);
     setGeneratedText("");
     if (!prompt) {
-      alert("Please enter an email");
+      alert("Please fill out the form");
       setIsLoading(false);
       return;
     } else {
