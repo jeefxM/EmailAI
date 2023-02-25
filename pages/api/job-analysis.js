@@ -10,7 +10,7 @@ export default async function handler(req, res) {
   if (!prompt) return res.status(400).json({ text: "No prompt provided" });
 
   const basePromptPrefix =
-    "analyze this job description and brifely summrize it : ";
+    "Highlite the three most important responsibilites in this job description:  ";
 
   const responseResult = await openai.createCompletion({
     model: "text-davinci-003",
