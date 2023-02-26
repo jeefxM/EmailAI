@@ -29,7 +29,7 @@ const JobReview = () => {
   }
 
   async function generateText(prompt) {
-    const response = await fetch("http://localhost:5000", {
+    const response = await fetch("/api/post-generate", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
