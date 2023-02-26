@@ -29,7 +29,7 @@ const JobReview = () => {
   }
 
   async function generateText(prompt) {
-    const response = await fetch("/api/post-generate", {
+    const response = await fetch("http://localhost:5000", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -67,7 +67,7 @@ const JobReview = () => {
           name="prompt"
           maxRows={200}
           onChange={handleChange}
-          placeholder="Copy and paste your job description in here to generate a brief overview of the job."
+          placeholder="Copy and paste the job description in here to generate a brief overview of the job."
           className=" w-full min-h-[200px] bg-gray-800 text-[#f3f4f8] p-4 block border border-gray-700 rounded-2xl placeholder-gray-400 focus:outline-none focus:ring-gray-500 focus:border-gray-500 sm:text-base"
           style={{ resize: "none" }}
         />
@@ -77,7 +77,7 @@ const JobReview = () => {
           <button
             type="submit"
             onClick={handleSubmit}
-            className="flex justify-center items-center text-[#f3f4f8] font-bold py-2 px-4 rounded-3xl focus:outline-none focus:shadow-outline bg-gray-800 hover:bg-gray-700 ml-auto mt-3 max-sm:text-sm"
+            className="flex justify-center items-center text-[#f3f4f8] font-bold py-2 px-4 rounded-3xl focus:outline-none focus:shadow-outline bg-gray-800 hover:bg-gray-700 ml-auto mt-3 max-sm:text-sm mb-10"
           >
             Generate Text
           </button>
@@ -86,15 +86,15 @@ const JobReview = () => {
           <div className="mt-5 text-[#f3f4f8] whitespace-pre-line ">
             <p className="text-lg font-bold">Generated Text:</p>
             <TextareaAutosize
-              className="w-full h-auto min-h-[400px] max-h-[200px] bg-gray-800 text-[#f3f4f8] p-4 block border border-gray-700 rounded-2xl placeholder-gray-400 focus:outline-none focus:ring-gray-500 focus:border-gray-500 sm:text-base mb-20"
-              style={{ resize: "none", height: "auto" }}
+              className=" w-full min-h-[200px] bg-gray-800 text-[#f3f4f8] p-4 block border border-gray-700 rounded-2xl placeholder-gray-400 focus:outline-none focus:ring-gray-500 focus:border-gray-500 sm:text-base mb-10"
               maxRows={200}
+              style={{ resize: "none" }}
             >
               {generatedText}
             </TextareaAutosize>
             <a
               href="https://tsredimaster.gatsbyjs.io/"
-              className="lg:fixed bottom-5 left-10 px-3 py-2 rounded-3xl transition transform hover:scale-105 text-[#f3f4f8] flex items-center justify-center"
+              className="lg:static bottom-5 left-10 px-3 py-2 rounded-3xl transition transform hover:scale-105 text-[#f3f4f8] flex items-center justify-center"
             >
               <img
                 alt="Tsredi"
@@ -103,6 +103,20 @@ const JobReview = () => {
               />
             </a>
           </div>
+        ) : userInput.length > 350 ? (
+          <a
+            href="https://tsredimaster.gatsbyjs.io/"
+            className="fixed max-md:static bottom-5 left-10 px-3 py-2 rounded-3xl transition transform hover:scale-105 text-[#f3f4f8]  "
+          >
+            <img src="whitelogo.png" className="w-32 h-20 mb-2" />
+          </a>
+        ) : userInput.length > 350 ? (
+          <a
+            href="https://tsredimaster.gatsbyjs.io/"
+            className="fixed max-md:static bottom-5 left-10 px-3 py-2 rounded-3xl transition transform hover:scale-105 text-[#f3f4f8]  "
+          >
+            <img src="whitelogo.png" className="w-32 h-20 mb-2" />
+          </a>
         ) : (
           <a
             href="https://tsredimaster.gatsbyjs.io/"

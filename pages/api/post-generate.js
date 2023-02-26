@@ -1,7 +1,7 @@
 import { Configuration, OpenAIApi } from "openai";
 
 const configuration = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY,
+  apiKey: process.env.OPENAI_API_KEY_POST,
 });
 const openai = new OpenAIApi(configuration);
 
@@ -10,7 +10,7 @@ export default async function handler(req, res) {
   if (!prompt) return res.status(400).json({ text: "No prompt provided" });
 
   const basePromptPrefix =
-    "Help me write a professional structured linkedin post about: ";
+    "Help me write a  half a page long Linkedin Post with hashtags at the end about: ";
 
   const responseResult = await openai.createCompletion({
     model: "text-davinci-003",
